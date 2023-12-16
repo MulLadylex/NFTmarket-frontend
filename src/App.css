@@ -2,37 +2,137 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navbar {
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #0000ffc1;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#navbar a {
+  float: left;
+  text-align: center;
+  color: #f2f2f2;
+  padding: 13px 22px;
+  text-decoration: none;
+  font-size: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #4CAF50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#navbar button {
+  float: right;
+  /* color: #f2f2f2; */
+  text-align: center;
+  padding: 13px 22px;
+  text-decoration: none;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#navbar button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar button.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+.upload-container {
+  width: 600px;
+  margin: 15px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-form label {
+  font-size: 20px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.upload-form input, .upload-form textarea {
+  margin-top: 10px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancle-button, .upload-button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cancle-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.upload-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.success-message {
+  background-color: #FFD700; /* 背景色 */
+  color: #000000; /* 文字颜色 */
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid #FF8C00; /* 边框样式 */
+}
+
+.success-message a {
+  color: #FF4500; /* 链接颜色 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+.success-message a:hover {
+  color: #FF6347; /* 鼠标悬停时的链接颜色 */
+}
+
+.nft-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nft-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  flex: 1;
+}
+
+.nft-info {
+  padding: 10px;
+  text-align: center;
 }
