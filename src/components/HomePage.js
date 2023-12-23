@@ -1,8 +1,10 @@
-import "../App.css";
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import "../styles/NFTCard.css";
+
 import NFTCard from "./NFTCard";
 import { balanceOf, tokenOfOwnerByIndex } from "../utils/nft.js";
+import config from "../config.js";
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -14,11 +16,11 @@ const HomePage = () => {
 
     useEffect(() => {
         const getNFTs = async () => {
-            const length = await balanceOf("0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0");
-            console.log('length', length);
+            const length = await balanceOf(config.ContractAddress.marketAddress);
+            // console.log('length', length);
             for (let i = 0; i < length; i++) {
-                const tokenId = await tokenOfOwnerByIndex("0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0", i);
-                console.log('tokenId', tokenId);
+                const tokenId = await tokenOfOwnerByIndex(config.ContractAddress.marketAddress, i);
+                // console.log('tokenId', tokenId);
                 setNFTs((prev) => [...prev, tokenId]);
                 setNFTs((prev) => [...new Set(prev)]);
             }
@@ -27,7 +29,7 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className="nfts-container">
+        <div className="container">
             {nfts.map(nft => (
                 <NFTCard tokenId={nft} onClick={() => handleNFTClick(nft)} />
             ))}

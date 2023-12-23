@@ -1,5 +1,5 @@
-import "../App.css";
 import { Link } from "react-router-dom";
+import "../styles/Navbar.css";
 
 function Navbar( {connectMyWallet, WalletAddress}) {
   return (
@@ -11,8 +11,9 @@ function Navbar( {connectMyWallet, WalletAddress}) {
         <Link className="a" to="/">Home</Link>
         <Link className="a" to="/upload">Upload</Link>
         <Link className="a" to="/owned-nfts">Own</Link>
-        <button type="button" className="connect-wallet-button" onClick={connectMyWallet} style={{ float:"right" }}>
-          {WalletAddress.slice(0, 8) || "Connect Wallet"}</button>
+        <button type="button" className="connect-wallet-button" onClick={connectMyWallet}>
+        {WalletAddress ? `${WalletAddress.slice(0, 8)}...${WalletAddress.slice(-4)}` : "Connect Wallet"}
+        </button>
       </div>
     </>
   );

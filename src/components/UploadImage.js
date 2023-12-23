@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../App.css";
+import "../styles/UploadImage.css";
 
 function UploadImage({ address }) {
     const [title, setTitle] = useState("");
@@ -38,8 +38,7 @@ function UploadImage({ address }) {
                 }
             });
 
-
-            console.log('File uploaded successfully', res.data);
+            // console.log('File uploaded successfully', res.data);
             navigate("/uploadSuccess");
         } catch (err) {
             console.log('Error occured: ',err);

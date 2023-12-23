@@ -1,7 +1,7 @@
 import { useEffect,useState } from 'react';
 import { getMetadata } from '../utils/nft.js';
 import { getOrder } from '../utils/market.js';
-import '../App.css';
+import '../styles/NFTCard.css';
 
 const NFTCard = ({tokenId,onClick}) => {
     // console.log(tokenId)
@@ -20,12 +20,13 @@ const NFTCard = ({tokenId,onClick}) => {
     }, []);
 
 return (
-    <div className="nft-card" onClick={onClick}>
-        <div className="nft-image">
+    <div className="home-nft-card" onClick={onClick}>
+        <div className="home-nft-image">
             < img src={metadata.imageURL} alt={metadata.title}/>
         </div>
-        <div className="nft-info">
+        <div className="home-nft-info">
         <h3>{metadata.title}</h3>
+        <p>{metadata.description}</p>
         <p>Price: {order.price} USDT</p >
         </div>
     </div>
