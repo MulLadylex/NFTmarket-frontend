@@ -1,0 +1,24 @@
+.success-message {
+    position: fixed; /* 固定位置 */
+    right: 0; /* 右侧对齐 */
+    left: 0; /* 左侧对齐 */
+    bottom: 0; /* 底部对齐 */
+    top: 155px; /* 距离顶部100px */
+    background-color: #FFD700; /* 背景色 */
+    color: #000000; /* 文字颜色 */
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #FF8C00; /* 边框样式 */
+    font-family: Arial, sans-serif; /* 字体 */
+    font-size: 20px; /* 字体大小 */
+    font-weight: bold; /* 字体粗细 */
+}
+
+.success-message a {
+    color: #FF4500; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+.success-message a:hover {
+    color: #FF6347; /* 鼠标悬停时的链接颜色 */
+}

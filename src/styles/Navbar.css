@@ -1,0 +1,48 @@
+#navbar {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #0000ffc1;
+    overflow: hidden;
+}
+
+#navbar a {
+    float: left;
+    text-align: center;
+    color: #f2f2f2;
+    padding: 13px 22px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#navbar button {
+    float: right;
+    text-align: center;
+    padding: 13px 22px;
+    text-decoration: none;
+    font-size: 23px;
+    border: none;
+    cursor: pointer;
+}
+
+#navbar button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#navbar button.active {
+    background-color: #4CAF50;
+    color: white;
+}

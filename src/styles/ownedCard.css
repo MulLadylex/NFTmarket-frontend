@@ -1,0 +1,80 @@
+.nfts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+    align-items: start; /*让所有网格项从网格行的顶部开始*/
+    gap: 30px; /* 设置网格项之间的间距 */
+    padding: 10px; /* 设置容器的内边距 */
+    background-color: #f9f9f9; /* 设置容器的背景色 */
+}
+
+.nft-card {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #ddd; /* 添加边框 */
+    padding: 10px; /* 添加内边距 */
+    margin-bottom: 20px; /* 添加外边距 */
+    border-radius: 10px; /* 添加圆角 */
+    background-color: #f9f9f9; /* 添加背景色 */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* 添加阴影 */
+    transition: 0.3s; /* 添加过渡效果 */
+}
+
+.nft-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* 鼠标悬停时改变阴影 */
+}
+
+.nft-image {
+    width: 100%;
+    flex: 1;
+}
+
+.nft-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.nft-card-details {
+    flex: 2;
+    padding: 20px;
+    padding-left: 40px;
+    font-size: larger;
+    text-align: left;
+}
+
+.nft-card-details h3 {
+    margin: 0; /* 移除标题的外边距 */
+    margin-bottom: 20px; /* 添加标题的下边距 */
+    color: #333; /* 改变标题的颜色 */
+
+}
+
+.nft-card-details p {
+    margin: 0; /* 移除段落的外边距 */
+    margin-bottom: 15px; /* 添加段落的下边距 */
+    color: #666; /* 改变段落的颜色 */
+
+}
+
+.btn {
+    flex: 0.5;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button {
+    width: 100%;
+    height: 25%;
+    margin: 20px 0px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: larger;
+}

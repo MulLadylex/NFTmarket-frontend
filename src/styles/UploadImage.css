@@ -1,0 +1,49 @@
+.upload-container {
+    width: 600px;
+    margin: 15px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-form label {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.upload-form input, .upload-form textarea {
+    margin-top: 10px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancle-button, .upload-button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cancle-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.upload-button {
+    background-color: #4CAF50;
+    color: white;
+}
