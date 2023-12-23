@@ -7,12 +7,13 @@ import UploadSuccess from './components/UploadSuccess';
 import UploadImage from './components/UploadImage';
 import HomePage from './components/HomePage.js';
 import NFTDetails from './components/NFTDetails.js';
+import OwnedNFTs from './components/OwnedNFTs.js';
 
 function App() {
   const [myWallet, connectMyWallet] = useState("");
 
   useEffect(() => {
-    // getWalletAddress();
+    getWalletAddress();
     addListener();
   }, []);
 
@@ -44,10 +45,10 @@ function App() {
         <Navbar connectMyWallet={getWalletAddress} WalletAddress={myWallet} />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/upload" element={<UploadImage address={myWallet}/>} />
+          <Route path="/upload" element={<UploadImage address={ myWallet }/>} />
           <Route path="/uploadSuccess" element={<UploadSuccess />} />
           <Route path="/nft-details/:tokenId" element={<NFTDetails />} />
-          {/* <Route path="/owned-nfts" element={<OwnedNFTs />} /> */}
+          <Route path="/owned-nfts" element={<OwnedNFTs address={ myWallet } />} />
         </Routes>
       </Router>
     </div>
