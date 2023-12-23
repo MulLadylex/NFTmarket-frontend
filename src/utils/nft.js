@@ -1,9 +1,11 @@
 import { ethers } from 'ethers'
-import ABI from '../contracts/NFTM.json'
 import axios from 'axios';
 
+import ABI from '../contracts/NFTM.json'
+import config from '../config';
+
 let provider = new ethers.BrowserProvider(window.ethereum);
-const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
+const contractAddress = config.ContractAddress.nftAddress;
 const contract = new ethers.Contract(contractAddress, ABI, await provider.getSigner());
 
 export async function balanceOf(address) {
@@ -24,26 +26,35 @@ export async function tokenOfOwnerByIndex(address, index) {
     }
 }
 
-export async function tokenURI(tokenId) {
-    try {
-        const res = await contract.tokenURI(tokenId)
-        console.log(res);
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 export async function getMetadata(tokenId) {
     try {
         const result = await contract.tokenURI(tokenId)
         console.log(result);
         const response = await axios.get(result);    
         return {
-            title: response.data.name,
+            title: response.data.title,
             description: response.data.description,
             imageURL: response.data.image
         };
     } catch (error) {
         console.log(error)
     }
+}
+
+export async function List(from, to, tokenId, price) {
+    try {
+        const _price = await converToBytes32(price);
+
+        const res = await contract["safeTransferFrom(address,address,uint256,bytes)"](from, to, tokenId, _price)
+        
+        return res.hash;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function converToBytes32(price) {
+    const abiCoder = new ethers.AbiCoder();
+    const bytes32Value = abiCoder.encode(['uint256'], [price]);
+    return bytes32Value.toString();
 }
